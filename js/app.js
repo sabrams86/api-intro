@@ -13,6 +13,7 @@ xhr.addEventListener('load', function(){
       var subr = items[i].data.display_name;
       var subrUrl = items[i].data.url;
       var a = document.createElement('a');
+      a.className = "subject"
       a.href = "/show.html?subr="+subr+"&subrUrl="+subrUrl;
       a.innerHTML= "<div class='button'>"+subr+"</div>";
       div.appendChild(a);

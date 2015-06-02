@@ -18,11 +18,12 @@ body {
 }
 
 a {
-  display: block;
+  display: inline;
   font-size: 16px;
   font-family: "helvetica" sans-serif;
   font-weight: lighter;
   color: #525564;
+  text-align: center;
 }
 
 p{
@@ -37,10 +38,15 @@ h1{
 
 .button{
   display: inline-block;
-  height: 25px;
+  background-color: #c25b56;
+  height: 40px;
+  padding: 10px;
+  margin: 15px;
+  text-align: center;
+}
 
-  padding: 4px;
-  margin: 4px;
+.subject{
+  font-size: 30px;
 }
 
 /*525564	74828F	96C0CE	BEB9B5	C25B56	FEF6EB*/
