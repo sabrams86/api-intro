@@ -1,19 +1,46 @@
-.button{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100px;
-  height: 50px;
-  color: white;
-  background-color: blue;
-  margin-top: 50px;
-  
+body {
+  background-color: #96C0CE;
+  margin:0;
+  padding:0;
 }
-
+.head{
+  background-color: #C25B56;
+  height: 140px;
+  margin-top:-20px;
+  padding-top:20px;
+}
 .data{
   display: block;
-  margin-left: auto;
+  margin-left: 20px;
   margin-right: auto;
-  color: black;
-  text-align: center;
+  text-align: left;
+  height: 400px;
 }
+
+a {
+  display: block;
+  font-size: 16px;
+  font-family: "helvetica" sans-serif;
+  font-weight: lighter;
+  color: #525564;
+}
+
+p{
+  display: inline-block;
+}
+h1{
+  font-size: 60px;
+  font-family: "helvetica" sans-serif;
+  font-weight: lighter;
+  color: #beb9b5;
+}
+
+.button{
+  display: inline-block;
+  height: 25px;
+
+  padding: 4px;
+  margin: 4px;
+}
+
+/*525564	74828F	96C0CE	BEB9B5	C25B56	FEF6EB*/
