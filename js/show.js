@@ -1,15 +1,3 @@
-var parseQueryString = function(queryString){
-  var urlQuery = queryString;
-  urlQuery = urlQuery.replace(/^\?/,"");
-  var urlQueryObj = {};
-  var queryArray = urlQuery.split('&');
-  for(i=0; i<queryArray.length; i++){
-      var querySet = queryArray[i].split('=');
-      urlQueryObj[querySet[0]] = querySet[1];
-  }
-  return urlQueryObj
-}
-
 var xhr = new XMLHttpRequest();
 var queryString = document.location.search;
 var query = parseQueryString(queryString);
@@ -27,6 +15,7 @@ xhr.addEventListener('load', function(){
       var a = document.createElement('a');
       var p = document.createElement('p');
       a.href = url;
+      a.target = "_blank";
       a.innerHTML= title;
       p.innerHTML= "";
       div.appendChild(a);
