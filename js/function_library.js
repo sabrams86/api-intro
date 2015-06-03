@@ -1,11 +1,19 @@
 var parseQueryString = function(queryString){
   var urlQuery = queryString;
   urlQuery = urlQuery.replace(/^\?/,"");
-  var urlQueryObj = {};
+  var params = {};
   var queryArray = urlQuery.split('&');
   for(i=0; i<queryArray.length; i++){
       var querySet = queryArray[i].split('=');
-      urlQueryObj[querySet[0]] = querySet[1];
+      var key = querySet[0];
+      var value = querySet[1];
+      if( key[key.length-1] === ']' && key[key.length-2] === '['){
+        key = key.substr(0,key.length-2);
+        params[key] = params[key] || [];
+        params[key].push(value);
+      } else {
+      params[key] = value;
+      }
   }
-  return urlQueryObj
+  return params
 }
