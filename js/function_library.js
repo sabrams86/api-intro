@@ -7,7 +7,14 @@ var parseQueryString = function(queryString){
       var querySet = queryArray[i].split('=');
       var key = querySet[0];
       var value = querySet[1];
-      if( key[key.length-1] === ']' && key[key.length-2] === '['){
+      if( key[key.length-1] === ']' && key[key.length-2] != '['){
+        subPair = key.split('[');
+        var keyName = subPair[0];
+        var subKey = subPair[1];
+        subKey = subKey.substr(0,subKey.length-1);
+        params[keyName] = params[keyName] || {};
+        params[keyName][subKey] = value;
+      } else if ( key[key.length-1] === ']' && key[key.length-2] === '[') {
         key = key.substr(0,key.length-2);
         params[key] = params[key] || [];
         params[key].push(value);
