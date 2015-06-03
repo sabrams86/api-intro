@@ -30,7 +30,7 @@ searchButton.addEventListener('click', function(){
       var type = results[i].Type
       var a = document.createElement('a');
       a.className = "subject";
-      a.href = "/movie.html/?i="+imdbId+"&title="+title;
+      a.href = "/movie.html?i="+imdbId+"&title="+title;
       a.innerHTML= "<div class='button'>"+title+"</div>";
       div.appendChild(a);
       var p = document.createElement('p');
