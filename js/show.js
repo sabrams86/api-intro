@@ -5,6 +5,7 @@ document.getElementsByTagName("title")[0].innerHTML = "Reddit Demo: "+query.subr
 xhr.open('GET', 'http://www.reddit.com/'+query.subrUrl.substring(1)+'.json', true);
 xhr.addEventListener('load', function(){
   var data = JSON.parse(xhr.response);
+  console.log(data);
   var items = data.data.children;
   var div = document.body.getElementsByClassName('data')[0];
   var head = document.body.getElementsByClassName('head')[0];

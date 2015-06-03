@@ -12,6 +12,15 @@ xhr.addEventListener('load', function(){
   heading.innerHTML = movie.Title;
   head.appendChild(heading);
   for(key in movie){
+    if (key === "Poster"){
+      var poster = document.getElementsByClassName('poster')[0];
+      var img = document.createElement('img');
+      img.src = movie[key];
+      img.style.display = "inline-block";
+      img.style.clear= "both";
+      img.style.marginTop = "50px;"
+      poster.appendChild(img);
+    }
     var h5 = document.createElement('h4');
     h5.innerHTML = key;
     var p = document.createElement('p');

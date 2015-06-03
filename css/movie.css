@@ -14,7 +14,11 @@ body{
   padding-left: 20px;
   display: block;
 }
-
+.poster{
+  float:right;
+  margin-right: 100px;
+  margin-top: 50px;
+}
 .data{
   display: block;
   margin-left: 20px;
