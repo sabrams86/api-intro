@@ -1,5 +1,4 @@
 var xhr = new XMLHttpRequest();
-
 xhr.open('GET', 'http://www.reddit.com/subreddits.json', true);
 xhr.addEventListener('load', function(){
   var data = JSON.parse(xhr.response);
@@ -17,7 +16,18 @@ xhr.addEventListener('load', function(){
       a.href = "/show.html?subr="+subr+"&subrUrl="+subrUrl;
       a.innerHTML= "<div class='button'>"+subr+"</div>";
       div.appendChild(a);
-
     }
+    var buttons = document.getElementsByClassName('button');
+    for (var i = 0; i<buttons.length; i++){
+      buttons[i].addEventListener('mouseout', function(){
+        this.className = "button";
+      });
+    }
+    for (var i = 0; i<buttons.length; i++){
+      buttons[i].addEventListener('mouseenter', function(){
+        this.className = "button hightlight";
+      },1000);
+    }
+
 });
 xhr.send(null);

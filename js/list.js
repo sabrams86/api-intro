@@ -1,10 +1,11 @@
 var xhr = new XMLHttpRequest();
 var queryString = document.location.search;
 var query = parseQueryString(queryString);
-document.getElementsByTagName("title")[0].innerHTML = "Reddit Demo: "+query.subrUrl.substring(3, query.subrUrl.length-1);
-xhr.open('GET', 'http://www.reddit.com/'+query.subrUrl.substring(1)+'.json', true);
+document.getElementsByTagName("title")[0].innerHTML = "OMDB Demo: "+query.title;
+xhr.open('GET', 'http://www.omdbapi.com/?s='+query.title+"&r=json", true);
 xhr.addEventListener('load', function(){
   var data = JSON.parse(xhr.response);
+  console.log(data);
   var items = data.data.children;
   var div = document.body.getElementsByClassName('data')[0];
   var head = document.body.getElementsByClassName('head')[0];
@@ -22,4 +23,3 @@ xhr.addEventListener('load', function(){
       div.appendChild(a);
     }
 });
-xhr.send(null);

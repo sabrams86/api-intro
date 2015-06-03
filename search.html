@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Reddit Demo</title>
-    <link href="/css/app.css" type="text/css" rel="stylesheet">
+    <link href="/css/movie.css" type="text/css" rel="stylesheet">
   </head>
   <body>
     <div class="head">
@@ -11,10 +11,15 @@
       <a href="/search.html" class="right"><div class="movie-link">OMDB</div></a>
       <a href="/index.html" class="right"><div class="reddit-link">Reddit</div></a>
     </div>
+    <form id="form" action="search.html" method="get">
+      <label class="title" for="title">Title</label>
+      <input id="title" type="text" name="title">
+      <input id="submit" type="submit" value="Search">
+    </form>
     <div class="data">
     </div>
 
     <script src="/js/function_library.js" type="text/javascript"></script>
-    <script src="/js/app.js" type="text/javascript"></script>
+    <script src="/js/search.js" type="text/javascript"></script>
   </body>
 </html>
